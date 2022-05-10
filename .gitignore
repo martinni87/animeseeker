@@ -1,0 +1,10 @@
+# Own files to be ignored
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# OS generated files
+*/.DS_Store
+.DS_Store
+.DS_Store?
