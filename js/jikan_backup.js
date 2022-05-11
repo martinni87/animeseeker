@@ -14,7 +14,9 @@ function searchAnime(event){
 }
 
 function updateDom(dataString){
-        dataString.data.sort((a,b)=>b.episodes-a.episodes).forEach(anime=>console.log(anime));
+        dataString.data
+            .sort((a,b)=>a.episodes-b.episodes)
+            .forEach(anime=>console.log(anime));
 }
 
 function pageLoaded(){
