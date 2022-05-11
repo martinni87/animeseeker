@@ -1,0 +1,102 @@
+/* Importación de fuente Roboto sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+
+/* ******************************************** */
+/* Inicio configuraciones generalesde la página */
+html, body
+{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Didact Gothic', sans-serif;
+    background: rgb(5,19,103);
+    background: linear-gradient(180deg, rgba(5,19,103,1) 0%, rgba(193,248,207,1) 50%, rgba(45,49,250,1) 100%);
+}
+ul, li, h1, h2, h3
+{
+    margin:0;
+}
+/* Final configuraciones generales de la página */
+/* ******************************************** */
+
+/* ********************************* */
+/* Inicio configuraciones del header */
+header
+{
+    display:flex;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color:aliceblue;
+    justify-content: center;
+    padding-top:25px;
+}
+/* Final configuraciones del header */
+/* ******************************** */
+.header_pic img
+{
+    height: 80px;
+}
+.header_title
+{
+    text-shadow: 1px 1px 15px rgba(193,248,207,1);
+}
+/* ******************************** */
+/* Configuración general del main */
+main
+{
+    display:flex;
+    width:100%;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+/* Fin de configuración general del main */
+/* ************************************* */
+
+.form
+{
+    height: fit-content;
+    text-align: center;
+    justify-content: center;
+}
+
+.form_searchBox
+{
+    width:50%;
+    height: 2em;
+    border-style:hidden;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px rgba(45,49,250,1);
+}
+
+.main_result
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.result_pic
+{
+    text-align: center;
+}
+
+/* ******************************** */
+/* Inicio configuraciones del footer */
+footer
+{
+    border-top: 1px rgba(193,248,207,1) solid;
+    width:100%;
+    padding:10px 0 10px 0;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+/* Final configuraciones del footer */
+/* ******************************** */
