@@ -8,41 +8,49 @@ function searchAnime(event){
     const query = form.get("search");
 
     fetch(`${base_url}/anime?q=${query}&page=1`)
-    .then(res=>res.json())
-    .then(updateDom)
-    .catch(err=>console.warn(err.message));
+        .then(res=>res.json())
+        .then(updateDom)
+        .catch(err=>document(err.message));
 }
 
 function updateDom(dataString){
 
     const searchResults = document.getElementById('search-results');
-
-    /*
-    dataString.data
-        .sort((a,b)=>a.episodes-b.episodes)
-        .forEach(anime=>console.log(anime));
-    */
     
-    searchResults.innerHTML = dataString.data
-        .sort((a,b)=>a.title-b.title)
-        .map(anime=>{
-            return `
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
+    const animeByCategories = dataString.data
+        .reduce((acc,anime)=>{
+            const {type} = anime;
+            if (acc[type] === undefined) acc [type] = [];
+            acc[type].push(anime);
+            return acc;
+        },{})
+
+        searchResults.innerHTML = Object.keys(animeByCategories).map(key=>{
+            
+            const animesHTML = animeByCategories[key]
+            .sort((a,b)=>a.title-b.title)
+            .map(anime=>{
+                return `
+                    <div class="container">
+                        <div class="search__results--pic">
                             <img src="${anime.images.jpg.image_url}">
-                            <span class="card-title">${anime.tittle}</span>
+                        </div>
+                        <div class="search__results--content">
+                            <div class="content_title"><h2>${anime.title}</h2></div>
+                            <div class="content_synopsis">${anime.synopsis}</div>
+                        </div>
+                        <div class="search_results--moreinfo">
+                            <a href="${anime.url}">Más info...</a>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <p>${anime.synopsis}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="${anime.url}">Más info...</a>
-                    </div>
-                </div>
-            `
-        });
+                `
+            }).join("");
+            
+            return `
+                <div class="row">${animesHTML}</div>`
+        }).join("");
+
+        //<section><h3>${key.toUpperCase()}</h3></section>
         
 }
 
