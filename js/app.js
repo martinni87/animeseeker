@@ -51,7 +51,7 @@ function imprimirData(data, query){
                 </div>
             </div>
             `
-        })
+        }).join("");
     }
 
 
