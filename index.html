@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadata-->
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <meta name="author" content="Martín Antonio Córdoba Getar">
+    <meta name="description" content="Buscador de animes mediante Jikan API REST">
+    <meta name="keywords" content=="HTML, CSS, JavaScript, API, REST, Anime, Jikan, buscador">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <link rel="stylesheet" href="./css/estilos.css">
     <title>Buscador de Animes</title>
 </head>
 <body>
+    <!-- Cabecera. Incluye logo, título de la página y barra buscador-->
     <div id="header" class="header">
         <div id="page-title" class="page-title">
             <img src="./img/logo.png" alt="Logo" height="100em">
             <h1>Buscador de <strong>Animes</strong></h1>
             <p><em>Master</em></p>
         </div>
+        <!-- Buscador es un input tipo búsqueda más una imagen tipo submit para el botón de búsqueda (lupa) -->
+        <!-- Desde aquí tomamos datos para generar el query en js -->
         <form id="form" name="form" class="form">
             <input type="search" id="search" name="search" class="search" value="" placeholder="Naruto, One Punch Man, Death Note,...">
             <input type="image" src="./img/search.svg" alt="Submit" class="button" name="button" id="button"/>
         </form>
     </div>
 
+    <!-- Cuerpo del documento. En el div results se despliegan los resultados obtenidos de la consulta. La estructura se crea en JS -->
     <div id="main" class="main">
         <div id="results" name="results" class="results"></div>
     </div>
 
+    <!-- Footer incluye datos del programador, API utilizada y 3 enlaces a sitios web de interés. -->
     <div class="footer">
         <div class="footer__text">
             <p>Sitio web creado por <span class="footer__text footer__text--bold">Martín Antonio Córdoba Getar</span></p><p>utilizando <span class="footer__text footer__text--bold"></span><a href="https://jikan.moe">API Jikan</a></span>.</p> 
@@ -35,6 +45,7 @@
         </div>
     </div>
 
+    <!-- Fragmento para cargar la hoja con la app de consulta en JS -->
     <script src="./js/app.js"></script>
 </body>
 </html>
