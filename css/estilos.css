@@ -62,11 +62,12 @@ html, body
     align-self: center;
     align-items: center;
     border-style:hidden;
-    box-shadow: 5px 5px 15px rgba(45,49,250,0.5);
+    box-shadow: 5px 5px 15px rgba(25,29,200,0.25);
     border-radius: 25px;
     background-color: rgba(234, 240, 253,1);
 
 }
+
 .search
 {
     background-color: rgba(234, 240, 253,1);
@@ -84,6 +85,10 @@ html, body
     filter:invert(50%);
 }
 
+.button:hover
+{
+    filter:none;
+}
 .main
 {
     font-family: 'Roboto', sans-serif;
@@ -182,6 +187,47 @@ html, body
     font-family: 'Roboto', sans-serif;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,79,121,1) 35%, rgba(255,255,255,0.25) 100%);
+}
+
+.footer__text
+{
+    font-weight: lighter;
+    font-size: small;
+}
+
+.footer__text--bold
+{
+    font-weight: 600;
+}
+
+.footer__links
+{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    padding:10px;
+    gap:30px;
+    align-items: center;
+    filter: grayscale();
+}
+
+.footer__links:hover
+{
+    filter: none;
+}
+
+a
+{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    
+}
+
+a:hover
+{
+    color:blue;
+    text-shadow: 1px 1px 5px lightgray;
 }
 
 @media (max-width:1200px) /* Para tablets o portátiles pequeños */
