@@ -14,8 +14,8 @@ html, body
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    background-color: white;
     line-height: 25px;
+    background-color: white;
 }
 
 .header
@@ -26,7 +26,7 @@ html, body
     grid-template-rows: 1fr 1fr;
     font-family: 'Macondo', cursive;
     background: rgb(2,0,35);
-    background: linear-gradient(180deg, rgba(2,0,35,1) 0%, rgba(9,80,120,1) 35%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(2,0,35,1) 0%, rgba(9,80,120,1) 35%, rgba(255,255,255,0.5) 100%);
     padding-top: 50px;
 }
 
@@ -34,6 +34,7 @@ html, body
 {
     display:flex;
     justify-self: center;
+    align-self: center;
     align-items: center;
     padding-bottom:20px;
 }
@@ -53,20 +54,34 @@ html, body
 .form
 {
     display:flex;
-    width:100%;
+    width:40%;
+    height: 50%;
     justify-self: center;
     justify-content: center;
+    align-self: center;
     align-items: center;
+    /*width:50%;
+    height: 50%;*/
+    border-style:hidden;
+    box-shadow: 5px 5px 15px rgba(45,49,250,0.5);
+    border-radius: 25px;
+    background-color: rgba(234, 240, 253,1);
 
 }
 .search
 {
-    width:50%;
-    height: 50%;
+    background-color: rgba(234, 240, 253,1);
     border-style: hidden;
-    box-shadow: 5px 5px 15px rgba(45,49,250,0.5);
-    border-radius: 25px;
-    padding: 5px 15px 5px 15px
+    width:80%;
+    height: 80%;
+    padding: 5px 15px 5px 15px;
+}
+.button
+{
+    background-color: rgba(234, 240, 253,0);
+    padding: 5px 15px 5px 15px;
+    height: 50%;
+    filter:invert(50%);
 }
 
 .main
@@ -84,6 +99,7 @@ html, body
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-top: 25px;
 }
 .results .results-pic
 {
@@ -96,6 +112,7 @@ html, body
     box-shadow: 5px 5px 15px rgba(45,49,250,0.5);
     border-style: hidden;
     border-radius: 15px;
+    width: 500px;
 }
 
 .results .results-content
@@ -143,4 +160,9 @@ html, body
     font-family: 'Roboto', sans-serif;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,79,121,1) 35%, rgba(255,255,255,0.25) 100%);
+}
+
+@media (max-width:650px)
+{
+
 }

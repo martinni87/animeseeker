@@ -11,7 +11,7 @@ function buscarAnime(event){
     const form = new FormData(this);
     const query = form.get("search");
 
-    fetch(`${url}?q=${query}&page=1&limit=3`)
+    fetch(`${url}?q=${query}&page=1&limit=4`)
     .then(response => response.json())
     .then(data => imprimirData(data, query))
     .catch(error => console.log(error))
@@ -23,15 +23,19 @@ function imprimirData(data, query){
     const result = document.getElementById('results');
 
     if(data.data.length === 0){
-        //console.log("nulldata")
+        console.log("error resultado no hay anime")
         result.innerHTML = `
         <div class="result-failed">
         <p>No es posible encontrar información de <strong>"${query}".</strong></p>
         <p>Revise el nombre e inténtelo de nuevo.</p>
         </div>`
     }
+    else if(query === ""){
+        console.log("No se busca, query vacía.")
+        result.innerHTML = `<div></div>`
+    }
     else{
-        //console.log("notnulldata")
+        console.log("notnulldata")
         result.innerHTML = data.data
         .sort((a,b)=>a.title-b.title)
         .map(animeData=>{
